@@ -1,0 +1,15 @@
+version: "1.0"
+services:
+    db:
+        image: mysql:8.0
+        container_name: flashclub-db
+        restart: always
+        environment:
+          MYSQL_DATABASE: flashclub
+          MYSQL_ROOT_PASSWORD: Student2
+          MYSQL_PASSWORD: Student1
+          MYSQL_USER: flash
+        volumes:
+          - ./storage/db-data:/var/lib/mysql
+        ports:
+          - '8002:3306'
